@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/login_style.css">
+</head>
+<body onresize="parent.resizeTo(520,712)" onload="parent.resizeTo(520,712)">
+    <main id="modal">
+        <header class="header">
+            <h2>로그인 또는 회원가입</h2>
+            <a href="#"></a>
+        </header>
+        <form class="cont">
+            <h3>위니브에서 여러분의 궁금증을 해결하세요! :)</h3>
+            <input type="text" required class="inp" placeholder="아이디">
+            <input type="password" required class="inp" placeholder="비밀번호">
+            <div class="check">
+                <input type="checkbox" id="keep_login">
+                <label for="keep_login">&nbsp;&nbsp;로그인 상태 유지</label>
+            </div>
+            <button type="submit" class="btn_login">로그인</button>
+            <div class="info">
+                <a href="#">회원가입</a>
+                <a href="#">아이디/비밀번호 찾기</a>
+            </div>
+        </form>
+        <footer class="other_account">
+            <p>또는</p>
+            <a href="#" class="google">구글 계정으로 로그인</a>
+            <a href="#" class="facebook">페이스북 계정으로 로그인</a>
+            <a href="#" class="naver">네이버 계정으로 로그인</a>
+            <a href="#" class="kakao">카카오톡 계정으로 로그인</a>
+        </footer>
+    </main>
+</body>
+</html>

@@ -1,0 +1,218 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+html, body {
+    width: 520px;
+    height: 712px;
+    border-radius: 10px;
+    font-family: Spoqa Han Sans Neo;
+}
+
+/* a, button reset */
+a:link {
+    color: #767676;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #767676;
+    text-decoration: none;
+}
+a:hover {
+    color: #767676;
+    text-decoration: none;
+}
+
+button {
+    background: inherit ;
+    border:none;
+    box-shadow:none;
+    border-radius:0;
+    padding:0;
+    overflow:visible;
+    cursor:pointer
+}
+
+/* style */
+#modal .header {
+    border-bottom: 1px solid #c4c4c4;
+}
+#modal h2 {
+    margin: 20px auto 18px;
+    text-align: center;
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    padding: 26px 24px 0;
+}
+
+.cont h3 {
+    margin-bottom: 24px;
+}
+
+.cont .inp {
+    margin-bottom: 10px;
+    width: 452px;
+    height: 50px;
+    border: 1px solid #c4c4c4;
+    border-radius: 5px;
+    padding-left: 16px;
+}
+
+.cont .inp+.inp {
+    margin-bottom: 17px;
+}
+.cont .check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 4px;
+}
+
+input[type="checkbox"]+label::before {
+    content:url('../images/check-box-off.png');
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+}
+
+input[type='checkbox']:checked+label::before {
+    background: url('../images/check-box-on.png') no-repeat 0 0px / contain;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.cont .check label {
+    margin-left: 8px;
+}
+
+.cont .btn_login {
+    width: 472px;
+    height: 50px;
+    background: #2f80ed;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    color: #767676;
+}
+
+.info a+a {
+    margin: 0 0 30px 28px;
+    position: relative;
+}
+
+.info a+a::before {
+    display: block;
+    margin-left: 12px;
+    content: "";
+    width: 1px;
+    height: 18px;
+    position: absolute;
+    top: 0;
+    left: -25px;
+    background: #767676;
+}
+
+.other_account {
+    display: flex;
+    flex-direction: column;
+    padding: 0 24px 25px;
+}
+
+.other_account p {
+    font-size: 14px;
+    text-align: center;
+    color: #767676;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.other_account p::before {
+    display: block;
+    content: "";
+    width: 210px;
+    height: 1px;
+    background: #c4c4c4;
+    position: absolute;
+    top: 7px;
+    left: 0;
+}
+
+.other_account p::after {
+    display: block;
+    content: "";
+    width: 210px;
+    height: 1px;
+    background: #c4c4c4;
+    position: absolute;
+    top: 7px;
+    right: 0;
+}
+
+.other_account a {
+    position: relative;
+    width: 472px;
+    height: 50px;
+    border: 1px solid #767676;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.other_account .google::before {
+    display: block;
+    content: "";
+    width: 28px;
+    height: 28px;
+    top: 11px;
+    left: 12px;
+    position: absolute;
+    background-image: url('../images/google-logo.png');
+}
+
+.other_account .facebook::before {
+    display: block;
+    content: "";
+    width: 28px;
+    height: 28px;
+    top: 11px;
+    left: 12px;
+    position: absolute;
+    background-image: url('../images/facebook.png');
+}
+
+.other_account .naver::before {
+    display: block;
+    content: "";
+    width: 28px;
+    height: 28px;
+    top: 11px;
+    left: 12px;
+    position: absolute;
+    background-image: url('../images/naver-logo.png');
+}
+
+.other_account .kakao::before {
+    display: block;
+    content: "";
+    width: 28px;
+    height: 28px;
+    top: 11px;
+    left: 12px;
+    position: absolute;
+    background-image: url('../images/kakao-logo.png');
+}
