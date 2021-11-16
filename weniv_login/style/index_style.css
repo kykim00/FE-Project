@@ -1,4 +1,3 @@
-@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 
 /* a reset */
 a:link {
@@ -18,7 +17,7 @@ a:hover {
 /* style */
 body {
     background: #f2f2f2;
-    font-family: Spoqa Han Sans Neo;
+    font-family: 'Spoqa Han Sans Neo';
 }
 
 .box {

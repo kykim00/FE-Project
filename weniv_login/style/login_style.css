@@ -1,12 +1,14 @@
-@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+html {
+    margin: 10px 0 0 10px;
+}
 
-html, body {
+body {
+    border: 1px solid #767676;
     width: 520px;
     height: 712px;
     border-radius: 10px;
-    font-family: Spoqa Han Sans Neo;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
-
 /* a, button reset */
 a:link {
     color: #767676;
@@ -35,12 +37,19 @@ button {
 /* style */
 #modal .header {
     border-bottom: 1px solid #c4c4c4;
+    display: flex;
 }
 #modal h2 {
     margin: 20px auto 18px;
     text-align: center;
 }
 
+#modal .header a {
+    content: '&times;';
+    margin: 20px 10px 0 0;
+    width: 20px;
+    height: 20px;
+}
 .cont {
     display: flex;
     flex-direction: column;
@@ -70,6 +79,11 @@ button {
     margin-left: 4px;
 }
 
+.cont .check label {
+    display: flex;
+    align-items: center;
+}
+
 input[type="checkbox"]+label::before {
     content:url('../images/check-box-off.png');
     display: inline-block;
@@ -79,7 +93,11 @@ input[type="checkbox"]+label::before {
 }
 
 input[type='checkbox']:checked+label::before {
-    background: url('../images/check-box-on.png') no-repeat 0 0px / contain;
+    background: url('../images/check-box-on.png');
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
 }
 
 input[type="checkbox"] {
