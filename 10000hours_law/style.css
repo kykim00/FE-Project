@@ -1,188 +1,296 @@
 @font-face {
-    font-family: 'GmarketSansBold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "GmarketSansBold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'GmarketSansMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 400;
-    src: url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2") format('woff2'),
-    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff") format('woff'),
-    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf") format('opentype');
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2")
+      format("woff2"),
+    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff")
+      format("woff"),
+    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf")
+      format("opentype");
 }
 
 #app {
-    font-family: GmarketSansMedium;
-    background-color: #5b2386;
-    color: white;
-    text-align: center;
-    padding-bottom: 70px;
+  font-family: GmarketSansMedium;
+  background-color: #5b2386;
+  color: white;
+  text-align: center;
+  padding-bottom: 70px;
 }
 
 .tit-law {
-    position: relative;
-    margin-top: 194px;
-    display: inline-block;
+  position: relative;
+  margin-top: 194px;
+  display: inline-block;
 }
 
 .tit-law::after {
-    display: block;
-    content:'';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 225px;
-    height: 225px;
-    margin: -112px 0 0 -112px;
-    background-image: url(images-law/title_bg.png);
-    background-size: 225px;
+  display: block;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 225px;
+  height: 225px;
+  margin: -112px 0 0 -112px;
+  background-image: url(images-law/title_bg.png);
+  background-size: 225px;
 }
 
 .tit-law .img-tit {
-    position: relative;
-    z-index: 10;
+  position: relative;
+  z-index: 10;
 }
 
 .img-txt {
-    display: block;
-    max-width: 486px;
-    margin: 125px auto 78px;
+  display: block;
+  max-width: 486px;
+  margin: 125px auto 78px;
 }
 
 .txt-desc {
-    position: relative;
-    line-height: 24px;
-    width: 475px;
-    font-size: 18px;
-    font-weight: 400;
-    margin: 0 auto 102px;
+  position: relative;
+  line-height: 2;
+  width: 475px;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 auto 102px;
 }
 
 .txt-desc .tit-desc {
-    font-size: 24px;
-    font-weight: 700;
+  font-size: 24px;
+  font-weight: 700;
 }
 
-.txt-desc::before, .txt-desc::after {
-    display: block;
-    position: absolute;
-    content: '';
-    width: 37px;
-    height: 32px;
-    top: 50%;
-    margin-top: -16px;
+.txt-desc::before,
+.txt-desc::after {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 37px;
+  height: 32px;
+  top: 50%;
+  margin-top: -16px;
 }
 
 .txt-desc::before {
-    left: 0;
-    background-image: url(images-law/txt-left.png);
+  left: 0;
+  background-image: url(images-law/txt-left.png);
 }
 
 .txt-desc::after {
-    right: 0;
-    background-image: url(images-law/txt-right.png);
+  right: 0;
+  background-image: url(images-law/txt-right.png);
 }
 
 .cont-inp {
-    font-size: 24px;
-    line-height: 24px;
+  font-size: 24px;
+  line-height: 24px;
 }
 
 .cont-inp .txt-wannabe {
-    margin-bottom: 27px;
+  margin-bottom: 27px;
 }
 
 .cont-inp .txt-time {
-    margin-bottom: 115px;
+  margin-bottom: 115px;
 }
 
-.cont-inp .txt-wannabe input, .cont-inp .txt-time input {
-    width: 228px;
-    height: 57px;
-    border: none;
-    border-radius: 7px;
-    text-align: center;
-    font-size: 24px;
+.cont-inp .txt-wannabe input,
+.cont-inp .txt-time input {
+  width: 228px;
+  height: 57px;
+  border: none;
+  border-radius: 7px;
+  text-align: center;
+  font-size: 24px;
 }
 
-.cont-inp .btn-exc, .btn-go, .btn-share{
-    position: relative;
-    padding: 21px 49px;
-    margin-bottom: 147px;
-    font-family: GmarketSansBold;
-    font-size: 24px;
-    line-height: 24px;
-    color: #5b2386;
-    background: #fcee21;
-    border-radius: 56px;
-    cursor: pointer;
-    border: none;
+.cont-inp .btn-exc,
+.btn-go,
+.btn-share {
+  position: relative;
+  padding: 21px 49px;
+  margin-bottom: 147px;
+  font-family: GmarketSansBold;
+  font-size: 24px;
+  line-height: 24px;
+  color: #5b2386;
+  background: #fcee21;
+  border-radius: 56px;
+  cursor: pointer;
+  border: none;
 }
 
 .cont-inp .btn-exc::after {
-    display: block;
-    position: absolute;
-    content: '';
-    width: 64px;
-    height: 72px;
-    right: -70px;
-    top: 50%;
-    margin-top: -36px;
-    background-image: url(images-law/hand.png);
+  display: block;
+  position: absolute;
+  content: "";
+  width: 64px;
+  height: 72px;
+  right: -70px;
+  top: 50%;
+  margin-top: -36px;
+  background-image: url(images-law/hand.png);
 }
 
 .blind {
-    position: absolute;
-    clip: rect(0 0 0 0);
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
 }
 
 .cont-result {
-    font-size: 24px;
-    line-height: 72px;
+  font-size: 24px;
+  line-height: 72px;
 }
 
 .cont-result .txt-wannabe {
-    margin-bottom: 17px;
+  margin-bottom: 17px;
 }
 
 .cont-result .txt-time {
-    margin-bottom: 120px;
+  margin-bottom: 120px;
 }
 
-.cont-result .txt-wannabe strong, .cont-result .txt-time strong {
-    font-family: GmarketSansBold;
-    font-size: 72px;
-    vertical-align: top;
-    
+.cont-result .txt-wannabe strong,
+.cont-result .txt-time strong {
+  font-family: GmarketSansBold;
+  font-size: 72px;
+  vertical-align: top;
 }
 
 .btn-share {
-    margin-left: 18px;
-    background: white;
+  margin-left: 18px;
+  background: white;
 }
 
 .cont-footer {
-    font-family: Noto Sans KR;
-    font-size: 12px;
-    line-height: 17px;
+  font-family: Noto Sans KR;
+  font-size: 12px;
+  line-height: 17px;
 }
 
 .cont-footer .img-footer {
-    width: 125px;
-    height: 25px;
-    margin: 0 auto 20px;
+  width: 125px;
+  height: 25px;
+  margin: 0 auto 20px;
 }
+
+@media screen and (max-width: 768px) {
+  .tit-law {
+    margin-top: 97px;
+  }
+
+  .tit-law::after {
+    width: 140px;
+    height: 140px;
+    margin: -70px 0 0 -70px;
+    background-size: 140px;
+  }
+
+  .tit-law .img-tit {
+    width: 280px;
+  }
+
+  .img-txt {
+    max-width: 384px;
+    margin: 80px auto;
+  }
+
+  .txt-desc {
+    width: 475px;
+    font-size: 14px;
+    margin: 0 auto 102px;
+  }
+
+  .txt-desc .tit-desc {
+    font-size: 18px;
+  }
+
+  .txt-desc::before,
+  .txt-desc::after {
+    width: 37px;
+    height: 32px;
+  }
+
+  .txt-desc::before {
+    left: 30px;
+    background-size: 24px;
+    background-repeat: no-repeat;
+  }
+
+  .txt-desc::after {
+    right: 30px;
+    background-size: 24px;
+    background-repeat: no-repeat;
+  }
+
+  .cont-inp {
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  .cont-inp .txt-wannabe {
+    margin-bottom: 27px;
+  }
+
+  .cont-inp .txt-time {
+    margin-bottom: 70px;
+  }
+
+  .cont-inp .txt-wannabe input,
+  .cont-inp .txt-time input {
+    width: 140px;
+    height: 34px;
+    font-size: 16px;
+  }
+
+  .cont-inp .btn-exc,
+  .btn-go,
+  .btn-share {
+    padding: 10px 20px;
+    margin-bottom: 70px;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 56px;
+    max-width: 240px;
+  }
+
+  .cont-result {
+    font-size: 16px;
+    line-height: 40px;
+  }
+
+  .cont-result .txt-wannabe {
+    margin-bottom: 17px;
+  }
+
+  .cont-result .txt-time {
+    margin-bottom: 70px;
+  }
+
+  .cont-result .txt-wannabe strong,
+  .cont-result .txt-time strong {
+    font-size: 36px;
+  }
+} ;
