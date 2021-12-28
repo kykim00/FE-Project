@@ -1,156 +1,327 @@
 @charset "utf-8";
 
 /* reset */
+.img-item {
+  display: block;
+}
+
+/* util */
+/* ir은 img-replace */
+.ir {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-indent: -9999px;
+  line-height: 0;
+  font-size: 1px;
+  color: transparent;
+}
+
+/* layout */
 body {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 500;
-    background: #eae8fe;
+  background-color: #eae8fe;
 }
 
 #app {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0 28px;
+  padding-top: 247px;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
-.tit-image {
-    width: 436px;
-    height: 204px;
+#app .vending-machine,
+#app .my-info {
+  width: 360px;
+  /* height: 545px; */
+  background-color: #fff;
+  box-sizing: border-box;
 }
 
-.cont-wrap {
-    display: flex;
-}
-.vending-machine {
-    width: 360px;
-    height: 545px;
-    background: #fff;
-    padding: 31px 27px 28px;
-}
-
-.my-info {
-    width: 360px;
-    height: 545px;
-    background: #fff;
+/* 타이틀 스타일링 */
+.tit-app {
+  top: 0;
+  width: 100%;
+  max-width: 386px;
+  height: 180px;
+  background: no-repeat center / 100% 100% url(../img/Logo_img.png);
 }
 
-button {
-    border-radius: 5px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+/* 자판기 스타일링 */
+#app .vending-machine {
+  position: relative;
+  padding: 31px 27px 28px;
 }
 
-.list-item {
-    display: flex;
-    flex-wrap: wrap;
-}
-.list-item .btn-item {
-    width: 94px;
-    height: 130px;
-    padding: 9px 9px 7px;
-    border: 3px solid #6327FE;
-    border-radius: 10px;
-    margin-bottom: 12px;
-}
-.list-item .btn-item .img-item {
-    width: 36px;
-    height: 65px;
-}
-.list-item .btn-item .tit-item {
-    font-size: 9px;
-    margin-bottom: 7px;
-}
-.list-item .btn-item .txt-item {
-    color: #fff;
-    background: #6327fe;
-    border-radius: 50px;
-    font-size: 12px;
-    text-align: center;
-    padding: 0 15px;
-}
-input {
-    border: none;
+/* 자판기 아이템 리스트 */
+.vending-machine .list-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* align-items: space-between; */
 }
 
+.vending-machine .list-item li {
+  position: relative;
+  width: 30%;
+  height: 130px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* .vending-machine .list-item li.on */
+/* .vending-machine .list-item li:active::before { */
+.vending-machine .list-item li:active::before {
+  /* box-shadow로 주는 방법이 좋을 것 같다는 의견 */
+  display: block;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  /* width: 91px; */
+  /* height: 130px; */
+  top: 0px;
+  left: 0px;
+  border: 3px solid #6327fe;
+  border-radius: 10px;
+  /* border-radius: 13px; */
+  box-sizing: border-box;
+}
+
+.vending-machine .list-item li.sold-out::before {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: 10px;
+  background: no-repeat center / 58px 45px url(../img/Sold-out.png)
+    rgba(0, 0, 0, 0.8);
+}
+
+.vending-machine .list-item li.sold-out {
+  pointer-events: none;
+}
+
+.vending-machine .list-item li:nth-child(3) ~ li {
+  margin-top: 12px;
+}
+
+.vending-machine .btn-item {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.vending-machine .list-item .img-item {
+  width: 36px;
+  height: 65px;
+  margin: 0 auto;
+}
+.vending-machine .list-item .txt-item {
+  display: block;
+  font-size: 9px;
+  margin: 5px auto;
+}
+.btn-item .txt-price {
+  display: inline-block;
+  font-size: 12px;
+  padding: 5px 15px;
+  background-color: #6327fe;
+  border-radius: 50px;
+  color: #fff;
+}
+
+/* 
+     col           col
+row  잔액,         거스름돈 반환
+     입금액 입력,   입금
+     획득 리스트,   획득
+*/
+
+.vending-machine .cont-return,
+.vending-machine .cont-put,
+.vending-machine .cont-get {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.cont-return .info-balance,
+.cont-put .inp-put,
+.cont-get .list-item-staged {
+  width: 65%;
+  padding: 6px 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.cont-return .btn-return,
+.cont-put .btn-put,
+.cont-get .btn-get {
+  width: 30%;
+  font-size: 13px;
+  padding: 6px 8px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+.vending-machine .cont-return {
+  margin-top: 20px;
+}
+
+/* 1번 */
 .cont-return .info-balance {
-    display: flex;
-    justify-content: space-between;
-    height: 33px;
-    margin-bottom: 11px;
+  /* float가 자식을 인식할 수 있도록 */
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 20px;
+  background-color: #eae8fe;
 }
-.cont-return .info-balance .return-wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 200px;
-    background: #eae8fe;
-    padding: 6px 10px 7px;
-    border-radius: 5px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 14px;
+.info-balance .txt-balance {
+  float: right;
 }
-.cont-return .info-balance .btn-return {
-    width: 94px;
-    font-size: 13px;
+/* 3번 */
+.cont-put .inp-put {
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  line-height: 18px;
 }
-.cont-return .cont-put {
-    display: flex;
-    justify-content: space-between;
-    height: 33px;
-    margin-bottom: 11px;
+/* 5번 */
+.cont-get .list-item-staged {
+  height: 106px;
+  overflow-y: auto;
+  padding: 12px;
+  border: 1px solid #bdbdbd;
+  background-color: #eae8fe;
 }
-.cont-return .cont-put .inp-put {
-    width: 200px;
-    padding: 6px 10px 7px;
-    border-radius: 5px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+/* 5번의 아이템 */
+.list-item-staged li {
+  /* float가 자식을 인식할 수 있도록 */
+  overflow: hidden;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-sizing: border-box;
 }
-.cont-return .cont-put .btn-put {
-    width: 94px;
-    font-size: 13px;
-    text-align: center;
-    font-size: 13px;
+.list-item-staged li + li {
+  margin-top: 6px;
 }
-.cont-return .cont-get {
-    display: flex;
-    justify-content: space-between;
-    height: 106px;
-    overflow: hidden;
+.list-item-staged .img-item,
+.list-item-staged .txt-item {
+  float: left;
 }
-.cont-return .cont-get .list-item-staged {
-    padding: 12px;
-    background: #eae8fe;
-    width: 200px;
-    height: 134px;
+.list-item-staged .img-item {
+  width: 18px;
+  height: 33px;
 }
-.cont-return .cont-get .list-item-staged .item-staged {
-    width: 170px;
-    height: 46px;
-    margin-bottom: 6px;
-    background: #fff;
-    padding: 0 8px;
-    vertical-align: middle;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.list-item-staged .txt-item {
+  margin-left: 10px;
+  line-height: 33px;
+  font-size: 9px;
 }
-.cont-return .cont-get .list-item-staged .item-staged .img-item {
-    width: 18px;
-    height: 33px;
+.list-item-staged .num-counter {
+  float: right;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
 }
-.cont-return .cont-get .list-item-staged .item-staged .item-left {
-    display: flex;
-    align-items: center;
+/* 6번 */
+.cont-get .btn-get {
+  font-weight: 700;
+  background-color: #6327fe;
+  color: #fff;
 }
-.cont-return .cont-get .list-item-staged .item-staged .txt-item {
-    font-size: 9px;
-    color: #333;
-    margin-left: 10px;
+
+/* 나의 정보 */
+#app .my-info {
+  background-color: #eae8fe;
 }
-.cont-return .cont-get .list-item-staged .item-staged .num-counter {
-    width: 30px;
-    height: 30px;
-    border: 1px solid #bdbdbd;
-    border-radius: 5px;
-    text-align: center;
-    line-height: 28px;
+/* 소지금 */
+.my-info .cont-mymoney {
+  background-color: #fff;
+  padding: 9px 27px;
+}
+.cont-mymoney .info-mymoney {
+  background-color: #eae8fe;
+  padding: 6px 10px;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 5px;
+}
+
+.info-mymoney .txt-mymoney {
+  float: right;
+  font-weight: 700;
+}
+
+/* 획득한 음료 */
+.my-info .cont-myitems {
+  margin-top: 20px;
+  padding: 25px 27px;
+  background-color: #fff;
+}
+.cont-myitems .tit-myitem {
+  display: block;
+  text-align: center;
+  margin-bottom: 28px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.cont-myitems .list-item-staged {
+  overflow-y: auto;
+  height: 364px;
+  padding: 12px;
+  background-color: #eae8fe;
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.cont-myitems .txt-total {
+  display: block;
+  text-align: right;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+@media screen and (min-device-width: 320px) /* 기기의 넓이가 320px 이상 */ and (max-device-width: 480px) /* 기기의 넓이가 480px 이하 */ and (-webkit-min-device-pixel-ratio: 2) /* 최소 1px 당 2개의 화소 */ {
+  body {
+    background-color: #fff;
+  }
+
+  #app {
+    padding-top: 160px;
+    margin-bottom: 30px;
+  }
+
+  #app .tit-app {
+    width: 332px;
+    height: 142px;
+  }
+
+  .my-info .cont-myitems {
+    margin-top: 0;
+    padding: 31px 27px 32px;
+  }
+
+  .vending-machine {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .cont-myitems {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
 }
